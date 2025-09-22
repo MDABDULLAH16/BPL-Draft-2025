@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Shakib Al Hasan",
+    "country": "Bangladesh",
+    "skill": "allrounder",
+    "playing_side": "Left Hand Batsman",
+    "bowling_style": "Left-arm Orthodox Spin",
+    "category": "A",
+    "price": 95000,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Shakib_Al_Hasan_%284%29_%28cropped%29.jpg"
+  },
+  {
+    "name": "Tamim Iqbal",
+    "country": "Bangladesh",
+    "skill": "batter",
+    "playing_side": "Left Hand Batsman",
+    "bowling_style": "N/A",
+    "category": "B",
+    "price": 70000,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tamim_Iqbal_in_2020.jpg"
+  },
+  {
+    "name": "Taskin Ahmed",
+    "country": "Bangladesh",
+    "skill": "bowler",
+    "playing_side": "Right Hand Batsman",
+    "bowling_style": "Right-arm Fast",
+    "category": "A",
+    "price": 88000,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Taskin_Ahmed_in_2024_%28cropped%29.jpg"
+  },
+  {
+    "name": "Mustafizur Rahman",
+    "country": "Bangladesh",
+    "skill": "bowler",
+    "playing_side": "Left Hand Batsman",
+    "bowling_style": "Left-arm Fast Medium",
+    "category": "A",
+    "price": 89000,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mustafizur_Rahman_%281%29.jpg"
+  },
+  {
+    "name": "Litton Das",
+    "country": "Bangladesh",
+    "skill": "batter",
+    "playing_side": "Right Hand Batsman",
+    "bowling_style": "N/A",
+    "category": "B",
+    "price": 65000,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Liton_Das_%281%29.jpg"
+  },
+  {
+    "name": "Mahmudullah Riyad",
+    "country": "Bangladesh",
+    "skill": "allrounder",
+    "playing_side": "Right Hand Batsman",
+    "bowling_style": "Right-arm Off Spin",
+    "category": "C",
+    "price": 50000,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mahmudullah_Riyad_%281%29.jpg"
+  },
+  {
+    "name": "Andre Russell",
+    "country": "West Indies",
+    "skill": "allrounder",
+    "playing_side": "Right Hand Batsman",
+    "bowling_style": "Right-arm Fast Medium",
+    "category": "A",
+    "price": 100000,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Andre_Russell.jpg"
+  },
+  {
+    "name": "David Warner",
+    "country": "Australia",
+    "skill": "batter",
+    "playing_side": "Left Hand Batsman",
+    "bowling_style": "N/A",
+    "category": "B",
+    "price": 76000,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/David_Warner.jpg"
+  },
+  {
+    "name": "Rashid Khan",
+    "country": "Afghanistan",
+    "skill": "bowler",
+    "playing_side": "Right Hand Batsman",
+    "bowling_style": "Right-arm Leg Spin",
+    "category": "A",
+    "price": 95000,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rashid_Khan.jpg"
+  },
+  {
+    "name": "Moeen Ali",
+    "country": "England",
+    "skill": "allrounder",
+    "playing_side": "Left Hand Batsman",
+    "bowling_style": "Right-arm Off Spin",
+    "category": "B",
+    "price": 72000,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Moeen_Ali_Worcestershire_Cricket_%28cropped%29.jpg"
+  },
+  {
+    "name": "Kieron Pollard",
+    "country": "West Indies",
+    "skill": "allrounder",
+    "playing_side": "Right Hand Batsman",
+    "bowling_style": "Right-arm Medium",
+    "category": "A",
+    "price": 92000,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Kieron_Pollard_in_2019.jpg"
+  },
+  {
+    "name": "Alex Hales",
+    "country": "England",
+    "skill": "batter",
+    "playing_side": "Right Hand Batsman",
+    "bowling_style": "N/A",
+    "category": "C",
+    "price": 55000,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Alex_Hales.jpg"
+  }
+]
