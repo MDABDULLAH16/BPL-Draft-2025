@@ -13,11 +13,20 @@ const playerDataLoad = async () => {
 const playersPromise = playerDataLoad();
 function App() {
   const [isSelected, setIsSelected] = useState(true);
+  const [selectPlayer, setSelectPlayer] = useState([]);
+
+  const handleSelectPlayer = (player) => {
+    const newPlayers = [...selectPlayer, player];
+    setSelectPlayer(newPlayers);
+  };
+  console.log(selectPlayer);
+
   return (
     <>
       <Navbar></Navbar>
 
       <AvailableSelectedTitle
+        selectPlayer={selectPlayer}
         isSelected={isSelected}
         setIsSelected={setIsSelected}
       ></AvailableSelectedTitle>
@@ -28,10 +37,13 @@ function App() {
             <span className="loading loading-xl loading-spinner text-secondary"></span>
           }
         >
-          <AvailablePlayers playersPromise={playersPromise}></AvailablePlayers>
+          <AvailablePlayers
+            handleSelectPlayer={handleSelectPlayer}
+            playersPromise={playersPromise}
+          ></AvailablePlayers>
         </Suspense>
       ) : (
-        <SelectedPlayers></SelectedPlayers>
+        <SelectedPlayers selectPlayer={selectPlayer}></SelectedPlayers>
       )}
     </>
   );

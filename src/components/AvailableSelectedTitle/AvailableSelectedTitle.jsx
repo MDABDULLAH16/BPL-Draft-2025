@@ -1,6 +1,10 @@
 import React from "react";
 
-const AvailableSelectedTitle = ({ isSelected, setIsSelected }) => {
+const AvailableSelectedTitle = ({
+  isSelected,
+  setIsSelected,
+  selectPlayer,
+}) => {
   return (
     <div className="flex justify-between items-center mx-10 my-4">
       {isSelected ? (
@@ -24,7 +28,7 @@ const AvailableSelectedTitle = ({ isSelected, setIsSelected }) => {
             isSelected === false ? "bg-[#E7FE29]  font-bold " : ""
           }  hover:bg-[#fed004]  border-r-0 px-5   border-[#13131310] rounded-r-xl  py-3.5`}
         >
-          Selected(0)
+          Selected({selectPlayer.length})
         </div>
       </div>
     </div>
