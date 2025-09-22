@@ -1,11 +1,11 @@
-import React, { use } from "react";
+import { use } from "react";
 import userLogo from "../../assets/user.svg";
 import flag from "../../assets/flag.svg";
 const AvailablePlayers = ({ playersPromise }) => {
   const players = use(playersPromise);
+
   return (
     <div className="px-10">
-      <h1>AvailablePlayers {players.length}</h1>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 ">
         {players.map((player) => (
           <div className="  shadow-sm p-4">
