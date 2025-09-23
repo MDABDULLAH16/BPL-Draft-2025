@@ -1,12 +1,14 @@
-import React from "react";
 import deleteIcon from "../../assets/delete.svg";
 
-const SelectedPlayers = ({ selectPlayer }) => {
+const SelectedPlayers = ({ selectPlayer, handleRemovePlayer }) => {
   return (
     <>
       <div className="space-y-4">
-        {selectPlayer.map((player) => (
-          <div className="flex justify-between items-center max-w-[1200px] mx-auto px-10">
+        {selectPlayer.map((player, index) => (
+          <div
+            key={index}
+            className="flex justify-between items-center max-w-[1200px] mx-auto px-10"
+          >
             <div className="flex items-center">
               <img
                 className="h-[80px] w-[80px] rounded-2xl"
@@ -19,7 +21,12 @@ const SelectedPlayers = ({ selectPlayer }) => {
               </div>
             </div>
             <div>
-              <img className="cursor-pointer" src={deleteIcon} alt="Delete" />
+              <img
+                onClick={() => handleRemovePlayer(player)}
+                className="cursor-pointer"
+                src={deleteIcon}
+                alt="Delete"
+              />
             </div>
           </div>
         ))}
