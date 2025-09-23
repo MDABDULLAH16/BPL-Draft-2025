@@ -1,4 +1,4 @@
-import { Suspense, useState } from "react";
+import { Suspense, useMemo, useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import AvailablePlayers from "./components/AvailablePlayers/AvailablePlayers";
@@ -7,19 +7,26 @@ import AvailableSelectedTitle from "./components/AvailableSelectedTitle/Availabl
 import { toast, ToastContainer } from "react-toastify";
 
 const playerDataLoad = async () => {
-  const players = await fetch("/public/Players.json");
+  const players = await fetch("/Players.json");
   return players.json();
 };
 
-const playersPromise = playerDataLoad();
+// const playersPromise = playerDataLoad();
 function App() {
+  console.log("re load the page");
+  const playersPromise = useMemo(() => playerDataLoad(), []);
+
   const [isSelected, setIsSelected] = useState(true);
   const [selectPlayer, setSelectPlayer] = useState([]);
   const [availableBalance, setAvailableBalance] = useState(1000000);
   const handleSelectPlayer = (player) => {
     const newPlayers = [...selectPlayer, player];
+    const existPlayer = selectPlayer.find((pl) => pl.name === player.name);
+    if (existPlayer) {
+      toast.error("player is already selected");
+      return;
+    }
     setAvailableBalance(availableBalance - player.price);
-
     setSelectPlayer(newPlayers);
     toast.success(`${player.name} is Selected`, {
       position: "top-center",
@@ -60,23 +67,28 @@ function App() {
         setIsSelected={setIsSelected}
       ></AvailableSelectedTitle>
 
-      {isSelected ? (
+      <div>
         <Suspense
           fallback={
             <span className="loading loading-xl loading-spinner text-secondary"></span>
           }
         >
-          <AvailablePlayers
-            handleSelectPlayer={handleSelectPlayer}
-            playersPromise={playersPromise}
-          ></AvailablePlayers>
+          {/* ✅ Keep both mounted, but hide/show with CSS instead of unmounting */}
+          <div style={{ display: isSelected ? "block" : "none" }}>
+            <AvailablePlayers
+              handleSelectPlayer={handleSelectPlayer}
+              playersPromise={playersPromise}
+            />
+          </div>
+
+          <div style={{ display: isSelected ? "none" : "block" }}>
+            <SelectedPlayers
+              handleRemovePlayer={handleRemovePlayer}
+              selectPlayer={selectPlayer}
+            />
+          </div>
         </Suspense>
-      ) : (
-        <SelectedPlayers
-          handleRemovePlayer={handleRemovePlayer}
-          selectPlayer={selectPlayer}
-        ></SelectedPlayers>
-      )}
+      </div>
       <ToastContainer />
     </>
   );
